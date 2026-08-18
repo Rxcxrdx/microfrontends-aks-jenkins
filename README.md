@@ -28,6 +28,7 @@
 ## 📑 Table of Contents
 
 - [About the Project](#-about-the-project)
+- [Demo](#-demo)
 - [Project Status](#-project-status)
 - [Repositories](#-repositories)
 - [Features](#-features)
@@ -65,6 +66,26 @@ What makes it more than a container demo:
 - Ingress routing that handles path rewriting and Next.js asset paths correctly
 - Health probes, resource limits, and a pipeline that fails when a rollout
   does not converge
+
+---
+
+## 🖼 Demo
+
+Both screens are rendered by the same host application, but the content of each
+comes from a **different micro-frontend**, loaded in the browser at runtime and
+fetching its own data from the API.
+
+**`/` — balance view, served by `mfe-consultas`**
+
+![Balance view rendered by the mfe-consultas micro-frontend](docs/img/balance-view.png)
+
+**`/reportes` — transactions view, served by `mfe-reportes`**
+
+![Transactions view rendered by the mfe-reportes micro-frontend](docs/img/transactions-view.png)
+
+The navigation bar and layout belong to the host. Everything inside the card is
+remote code: the host never imports these components at build time — it
+resolves them over the network when the route is visited.
 
 ---
 
