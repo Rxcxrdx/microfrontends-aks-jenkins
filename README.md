@@ -131,8 +131,8 @@ Detalles que importan:
 La forma más rápida de ver el sistema funcionando, sin Azure y sin costo:
 
 ```bash
-git clone https://github.com/Rxcxrdx/POC-DEVOPS.git
-cd POC-DEVOPS
+git clone https://github.com/Rxcxrdx/microfrontends-aks-jenkins.git
+cd microfrontends-aks-jenkins
 
 # Clonar las 4 aplicaciones como carpetas hermanas
 for r in api-node shell-app mfe-consultas mfe-reportes; do
