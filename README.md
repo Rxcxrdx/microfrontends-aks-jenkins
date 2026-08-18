@@ -41,12 +41,12 @@ de cada micro-frontend. Cada remote consulta la API por su cuenta.
 flowchart LR
     Browser[Browser]
 
-    subgraph shell [shell-app · Next.js host]
+    subgraph shell["shell-app · Next.js host"]
         Home["/ → ConsultaSaldo"]
         Rep["/reportes → TablaTransacciones"]
     end
 
-    subgraph remotes [Micro-frontends]
+    subgraph remotes["Micro-frontends"]
         C["mfe-consultas<br/>remoteEntry.js"]
         R["mfe-reportes<br/>remoteEntry.js"]
     end
@@ -88,7 +88,7 @@ flowchart TB
 
     VM -->|docker push| ACR
     AKS -->|AcrPull vía Managed Identity| ACR
-    NSG -.protege.- VM
+    NSG -. protege .- VM
     Internet["Internet"] -->|LoadBalancer| AKS
 ```
 
