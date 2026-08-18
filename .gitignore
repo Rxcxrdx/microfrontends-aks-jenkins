@@ -1,0 +1,47 @@
+# Credenciales locales — NUNCA subir
+env.sh
+*.env
+.env
+.env.*
+!.env.example
+
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.*
+tfplan
+terraform.tfvars
+crash.log
+
+# Kubernetes
+aks-kubeconfig
+kubeconfig*
+
+# Claves
+*.pem
+*.key
+id_rsa*
+*_rsa
+*_ed25519
+
+# Dependencias y builds
+node_modules/
+dist/
+build/
+.next/
+coverage/
+
+# SO / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Subproyectos: cada uno es su propio repositorio (ver README)
+/infra-devops-lab/
+/api-node/
+/shell-app/
+/mfe-consultas/
+/mfe-reportes/
+
+# Config local de herramientas
+/.claude/

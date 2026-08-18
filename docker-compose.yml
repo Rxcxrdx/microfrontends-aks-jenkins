@@ -1,0 +1,38 @@
+services:
+  api-node:
+    build:
+      context: ./api-node
+    ports:
+      - "3001:3001"
+
+  mfe-consultas:
+    build:
+      context: ./mfe-consultas
+      args:
+        API_URL: http://localhost:3001
+    ports:
+      - "3002:80"
+    depends_on:
+      - api-node
+
+  mfe-reportes:
+    build:
+      context: ./mfe-reportes
+      args:
+        API_URL: http://localhost:3001
+    ports:
+      - "3003:80"
+    depends_on:
+      - api-node
+
+  shell-app:
+    build:
+      context: ./shell-app
+      args:
+        CONSULTAS_URL: http://localhost:3002
+        REPORTES_URL: http://localhost:3003
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mfe-consultas
+      - mfe-reportes
